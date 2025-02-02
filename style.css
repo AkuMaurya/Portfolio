@@ -64,3 +64,64 @@ section {
     height: 100%;
     z-index: -1;
 }
+
+.back-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007BFF; /* Blue background */
+    color: white; /* White text */
+    text-decoration: none; /* Remove underline */
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px; /* Rounded corners */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow */
+}
+
+.back-button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    transform: translateY(-3px); /* Slight lift on hover */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+.back-button:active {
+    transform: translateY(0); /* Button press effect */
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+}
+
+.video-container {
+display: flex;
+gap: 500px;
+margin-bottom: 100px;
+align-items: center;
+}
+
+.video-container:nth-child(even) {
+    flex-direction: row-reverse; /* Reverses the order for even items */
+}
+
+.video-container:nth-child(even) .video-description {
+    margin-left: 40px; /* Moves the text more to the right */
+}
+
+.video-description {
+    flex: 1;
+    font-family: Arial, sans-serif;
+}
+
+.video-description h2 {
+    margin-bottom: 10px;
+}
+
+.video-description ul {
+    font-size: 16px;
+    line-height: 2.6;
+    text-align: left;
+    padding-left: 20px;
+}
+
+iframe {
+    flex: 1;
+    max-width: 560px;
+    height: 315px;
+}
