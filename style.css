@@ -88,20 +88,28 @@ section {
     transform: translateY(0); /* Button press effect */
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
 }
-
 .video-container {
-display: flex;
-gap: 500px;
-margin-bottom: 100px;
-align-items: center;
+    display: flex;
+    gap: 500px;
+    margin-bottom: 100px;
+    align-items: center;
 }
 
 .video-container:nth-child(even) {
-    flex-direction: row-reverse; /* Reverses the order for even items */
+    flex-direction: row-reverse;
 }
 
 .video-container:nth-child(even) .video-description {
-    margin-left: 40px; /* Moves the text more to the right */
+    margin-left: 40px;
+}
+
+/* Adjust video positioning */
+.video-container:nth-child(odd) .video {
+    transform: translateX(-200px); /* Move left if it's on the right */
+}
+
+.video-container:nth-child(even) .video {
+    transform: translateX(200px); /* Move right if it's on the left */
 }
 
 .video-description {
