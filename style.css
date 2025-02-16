@@ -10,6 +10,7 @@ body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
     color: #333;
+    line-height: 1.6;
 }
 
 /* Create a container for the content */
@@ -29,11 +30,23 @@ header {
 
 nav ul {
     list-style: none;
+    padding: 0;
 }
 
 nav ul li {
     display: inline;
     margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #007BFF; /* Highlight color on hover */
 }
 
 /* Style sections */
@@ -52,10 +65,15 @@ section {
     border: 5px solid #333; /* Add a border to the image */
     border-radius: 10px; /* Add rounded corners */
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3); /* Add a subtle shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Add more custom styles as needed */
+.project-image:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5); /* Enhanced shadow on hover */
+}
 
+/* Style for the script section */
 #script {
     position: fixed;
     top: 0;
@@ -65,6 +83,7 @@ section {
     z-index: -1;
 }
 
+/* Back button styling */
 .back-button {
     display: inline-block;
     padding: 10px 20px;
@@ -88,48 +107,232 @@ section {
     transform: translateY(0); /* Button press effect */
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
 }
+
+/* Video container styling */
 .video-container {
     display: flex;
-    gap: 500px;
-    margin-bottom: 100px;
+    gap: 100px; /* Reduced gap for better spacing */
+    margin-bottom: 80px; /* Slightly reduced margin */
     align-items: center;
+    justify-content: center; /* Center the content horizontally */
+    padding: 0 20px; /* Add padding for better responsiveness */
 }
 
+/* Reverse the order for even containers */
 .video-container:nth-child(even) {
     flex-direction: row-reverse;
 }
 
+/* Adjust description margin for even containers */
 .video-container:nth-child(even) .video-description {
     margin-left: 40px;
+    margin-right: 0; /* Reset right margin for consistency */
 }
 
-/* Adjust video positioning */
-.video-container:nth-child(odd) .video {
-    transform: translateX(-200px); /* Move left if it's on the right */
+/* Adjust video positioning for odd containers */
+.video-container:nth-child(odd) {
+    transform: translateX(100px); /* Reduced translation for better alignment */
 }
 
-.video-container:nth-child(even) .video {
-    transform: translateX(200px); /* Move right if it's on the left */
+/* Adjust video positioning for even containers */
+.video-container:nth-child(even) {
+    transform: translateX(-100px); /* Corrected translation for even containers */
 }
 
+/* Video description styling */
 .video-description {
     flex: 1;
+    max-width: 600px; /* Limit description width for better readability */
     font-family: Arial, sans-serif;
+    color: #333; /* Added text color for better contrast */
 }
 
 .video-description h2 {
-    margin-bottom: 10px;
+    margin-bottom: 15px; /* Slightly increased margin for better spacing */
+    font-size: 24px; /* Added font size for heading */
+    color: #000; /* Darker color for heading */
 }
 
 .video-description ul {
     font-size: 16px;
-    line-height: 2.6;
+    line-height: 1.8; /* Adjusted line height for better readability */
     text-align: left;
     padding-left: 20px;
+    list-style-type: disc; /* Added bullet points for list items */
+    margin: 0; /* Remove default margin */
 }
 
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .video-container {
+        flex-direction: column; /* Stack items vertically on smaller screens */
+        gap: 30px; /* Reduce gap for mobile */
+        transform: none !important; /* Remove transform on smaller screens */
+        padding: 0 10px; /* Adjust padding for mobile */
+    }
+
+    .video-container:nth-child(even) {
+        flex-direction: column; /* Ensure even containers also stack vertically */
+    }
+
+    .video-container:nth-child(even) .video-description {
+        margin-left: 0; /* Reset margin for mobile */
+    }
+
+    .video-description {
+        max-width: 100%; /* Full width for description on mobile */
+        text-align: center; /* Center text on mobile */
+    }
+
+    .video-description ul {
+        text-align: center; /* Center list items on mobile */
+        padding-left: 0; /* Remove padding for mobile */
+    }
+}
+
+/* Style for iframes (e.g., embedded videos) */
 iframe {
     flex: 1;
     max-width: 560px;
     height: 315px;
+    border: none; /* Remove default iframe border */
+    border-radius: 10px; /* Add rounded corners */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3); /* Add a subtle shadow */
+}
+
+/* Style for Instagram embeds */
+.instagram-media {
+    margin: 0 auto; /* Center the embed */
+    max-width: 100%; /* Make it responsive */
+    border-radius: 10px; /* Add rounded corners */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3); /* Add a subtle shadow */
+}
+
+/* Education Section Styling */
+#education {
+    background-color: #fff;
+    padding: 40px 0;
+    border-top: 1px solid #e0e0e0; /* Add a subtle border above the section */
+    border-bottom: 1px solid #e0e0e0; /* Add a subtle border below the section */
+}
+
+#education h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 28px;
+    color: #333;
+}
+
+.education-item {
+    background-color: #f9f9f9;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.education-item:hover {
+    transform: translateY(-5px); /* Slight lift on hover */
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+.education-item h3 {
+    font-size: 22px;
+    color: #007BFF; /* Highlight color for headings */
+    margin-bottom: 10px;
+}
+
+.education-item p {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.education-item p strong {
+    color: #333; /* Darker color for emphasis */
+}
+
+/* Projects Section Styling */
+#projects {
+    background-color: #f4f4f4;
+    padding: 40px 0;
+    border-top: 1px solid #e0e0e0; /* Add a subtle border above the section */
+    border-bottom: 1px solid #e0e0e0; /* Add a subtle border below the section */
+}
+
+#projects h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 28px;
+    color: #333;
+}
+
+.project-item {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-item:hover {
+    transform: translateY(-5px); /* Slight lift on hover */
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+.project-item h3 {
+    font-size: 22px;
+    color: #007BFF; /* Highlight color for headings */
+    margin-bottom: 10px;
+}
+
+.project-item p {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.project-item p strong {
+    color: #333; /* Darker color for emphasis */
+}
+
+/* Contact Info Styling */
+.contact-info {
+    margin-top: 20px;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.contact-link:hover {
+    background-color: #0056b3;
+    transform: translateY(-3px);
+}
+
+.contact-link:active {
+    transform: translateY(0);
+}
+
+.icon {
+    width: 24px;
+    height: 24px;
 }
